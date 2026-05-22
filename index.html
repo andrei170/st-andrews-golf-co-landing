@@ -123,6 +123,15 @@
   .intl-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
   .intl-tags span{background:var(--cream);border:1px solid var(--line);border-radius:30px;padding:8px 18px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;letter-spacing:.5px;color:var(--green)}
 
+  /* VIDEO */
+  .video{background:var(--paper)}
+  .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .video-card{background:var(--cream);border:1px solid var(--line);border-radius:5px;overflow:hidden;border-top:3px solid var(--gold)}
+  .video-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;background:var(--green-deep)}
+  .video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .video-card .cap{padding:18px 20px;font-size:15.5px;color:var(--ink-soft)}
+  .video-card .cap strong{display:block;font-family:'Helvetica Neue',Arial,sans-serif;color:var(--green);font-size:13px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px}
+
   /* CONTACT */
   .contact{background:var(--cream)}
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
@@ -162,13 +171,13 @@
   @media(max-width:880px){
     .nav-links{display:none}
     .menu-btn{display:block}
-    .range-grid{grid-template-columns:1fr 1fr}
+    .range-grid,.video-grid{grid-template-columns:1fr 1fr}
     .craft .wrap,.intl .wrap,.contact-grid{grid-template-columns:1fr}
     .timeline{grid-template-columns:1fr 1fr}
     footer .cols{grid-template-columns:1fr 1fr}
   }
   @media(max-width:560px){
-    .range-grid,.timeline,footer .cols{grid-template-columns:1fr}
+    .range-grid,.video-grid,.timeline,footer .cols{grid-template-columns:1fr}
     .hero-stats{gap:28px}
   }
 </style>
@@ -196,6 +205,7 @@
       <a href="#craft">Made to Order</a>
       <a href="#heritage">Heritage</a>
       <a href="#international">Worldwide</a>
+      <a href="#video">Watch</a>
       <a class="nav-cta" href="#contact">Enquire</a>
     </nav>
     <button class="menu-btn" onclick="document.querySelector('.nav-links').style.display = (document.querySelector('.nav-links').style.display==='flex'?'none':'flex')">Menu</button>
@@ -401,6 +411,41 @@
   </div>
 </section>
 
+<!-- VIDEO -->
+<section class="video" id="video">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Watch &middot; As Featured</div>
+      <h2>The bench, on film</h2>
+      <p>A look at the workshop and the clubmaking story, from our own film and from those who have visited.</p>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/-x8kRxsyENc" title="As featured on the Discovery Channel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="cap"><strong>On Film</strong>As featured on the Discovery Channel</div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/xGPhP-4q6Kw" title="Inside the workshop, with Matt Fryer Golf" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="cap"><strong>Workshop Visit</strong>Inside the workshop, with Matt Fryer Golf</div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/5VwNNCp_29A" title="The oldest clubmaker story" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="cap"><strong>The Story</strong>The oldest clubmaker story</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -597,6 +642,45 @@
       "@type":"Question",
       "name":"Where are you based?",
       "acceptedAnswer":{"@type":"Answer","text":"We have a factory at 20 St Andrews Road, Largoward, by St Andrews, Fife, KY9 1HZ, and a shop at 8 Golf Place, St Andrews, Fife, KY16 9JA. You will find a map and both telephone numbers in the section below."}
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"St Andrews Golf Company Videos",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "item":{
+        "@type":"VideoObject",
+        "name":"As featured on the Discovery Channel",
+        "description":"St Andrews Golf Company as featured on the Discovery Channel.",
+        "embedUrl":"https://www.youtube-nocookie.com/embed/-x8kRxsyENc"
+      }
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "item":{
+        "@type":"VideoObject",
+        "name":"Inside the workshop, with Matt Fryer Golf",
+        "description":"A visit inside the St Andrews Golf Company workshop with Matt Fryer Golf.",
+        "embedUrl":"https://www.youtube-nocookie.com/embed/xGPhP-4q6Kw"
+      }
+    },
+    {
+      "@type":"ListItem",
+      "position":3,
+      "item":{
+        "@type":"VideoObject",
+        "name":"The oldest clubmaker story",
+        "description":"The story of the oldest clubmaker in the Home of Golf.",
+        "embedUrl":"https://www.youtube-nocookie.com/embed/5VwNNCp_29A"
+      }
     }
   ]
 }
